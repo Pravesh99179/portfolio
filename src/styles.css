@@ -1066,8 +1066,11 @@ dd {
   margin-block-start: var(--space-16);
 }
 
-.cs-figure img {
+.cs-figure img,
+.cs-figure video {
+  display: block;
   width: 100%;
+  height: auto;
   border-radius: 2px;
   border: 1px solid var(--border);
 }

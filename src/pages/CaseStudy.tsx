@@ -14,6 +14,14 @@ function renderBlock(block: Block, i: number) {
       </figure>
     );
   }
+  if (block.type === "video") {
+    return (
+      <figure key={i} className="cs-figure">
+        <video src={block.src} poster={block.poster} aria-label={block.label} controls playsInline preload="metadata" />
+        {block.caption && <figcaption>{block.caption}</figcaption>}
+      </figure>
+    );
+  }
   return (
     <section key={i} className="cs-section">
       <h2>{block.heading}</h2>

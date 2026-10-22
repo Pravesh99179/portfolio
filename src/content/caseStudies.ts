@@ -10,7 +10,8 @@ export type Block =
   | { type: "text"; heading: string; body: string[] }
   | { type: "list"; heading: string; intro?: string; items: { title: string; body: string }[] }
   | { type: "sequence"; heading: string; intro?: string; steps: { label: string; title: string; body: string }[] }
-  | { type: "image"; src: string; alt: string; caption?: string };
+  | { type: "image"; src: string; alt: string; caption?: string }
+  | { type: "video"; src: string; poster?: string; label: string; caption?: string };
 
 export type CaseStudy = {
   slug: string;
@@ -42,6 +43,13 @@ export const caseStudies: CaseStudy[] = [
     ],
     href: "https://aftershoot.com",
     blocks: [
+      {
+        type: "video",
+        src: "/work/aftershoot-galleries/galleries-overview.webm",
+        poster: "/work/aftershoot-galleries/galleries-overview-poster.jpg",
+        label: "Aftershoot Galleries product overview",
+        caption: "A product overview of Aftershoot Galleries.",
+      },
       {
         type: "text",
         heading: "The problem",
